@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>get data page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <section class="result">Result: </section>
+    <script>
+      (function () {
+        $.post("http://shenkar.html5-book.co.il/2016-2017/rs/dev_70/ws_calculator/ws_13.php",
+          {func:"avg", num1:10, num2:20, num3:30},
+        function(data) {
+          $(".result").append(data.retVal);
+          $(".result").append(data);
+          console.log("Return data: "+data.retVal);
+        });
+      })();
+    </script>
+  </body>
+</html>

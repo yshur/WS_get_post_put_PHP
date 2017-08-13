@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>get data page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <section class="result">Result: </section>
+    <script>
+      (function () {
+        // PUT or DELETE etc:
+        var dataObj = {func:"mult", num1:10, num2:20, num3:30};
+        $.ajax({
+          url: 'http://shenkar.html5-book.co.il/2016-2017/rs/dev_70/ws_calculator/ws_15.php',
+          data: dataObj,
+          //dataType: 'json',
+          type: 'PUT',
+          success: function(data) {
+            $(".result").append(data.retVal);
+            console.log("Return data: "+data.retVal);
+          }
+         });
+      })();
+    </script>
+  </body>
+</html>
